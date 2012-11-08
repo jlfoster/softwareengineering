@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 public class Bill {
 	double subtotal = 0;
+	double taxes = 0;
+	double TOTAL = 0;
 	ArrayList<MenuItem> choices;
 
 	public Bill(ArrayList<MenuItem> choices)
@@ -23,8 +25,15 @@ public class Bill {
 			//update the subtotal
 			subtotal = subtotal + item.getPrice();
 		}
-		//pring out the subtotal
+		//calculate the tax and total
+		taxes = subtotal*0.12;
+		TOTAL = taxes + subtotal;
+		//prints out the subtotal, hst and then the total 
 		System.out.println("Subtotal: " + subtotal);
+		System.out.println("HST: 	  " + taxes);
+		System.out.println("           __________");
+		System.out.println("TOTAL:    " + TOTAL);
+		
 	}
 	
 	/**
