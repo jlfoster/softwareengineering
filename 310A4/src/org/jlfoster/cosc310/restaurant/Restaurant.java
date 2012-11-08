@@ -34,15 +34,11 @@ public class Restaurant {
 		Bill bill = new Bill(choices);
 		
 		System.out.print("View bill? (y/n): ");
-		if (scanner.nextLine().equals("y"))
-		{
-			bill.printBill();
-		}
-		
+		bill.printBill(scanner.nextLine().equals("y"));		
 		double tip = bill.getUserPayment(scanner);
 		server.addTips(tip);
 		
-		System.out.println(server.getName() + "'s tips: " + server.getTips());
+		System.out.println(server.getName() + "'s tips:  " + server.getTips());
 		
 		return true;
 	}

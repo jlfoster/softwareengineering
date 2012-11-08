@@ -15,22 +15,16 @@ public class Bill {
 	{
 		this.choices = choices;
 	}
-
-	private void generateSubtotal()
-	{
-		subtotal = 0;
-		
-		for (MenuItem item : choices)
-			subtotal += item.getPrice();
-	}
 	
-	public void printBill(){
+	public void printBill(boolean showItems){
 		//print out the titles
-		System.out.println("Menu Item				Price");
+		if (showItems)
+			System.out.println("Menu Item				Price");
 		//for each item that they've selected
 		for(MenuItem item : choices){
 			//print out the name and price
-			System.out.println(item.getName() +"		" + item.getPrice());
+			if (showItems)
+				System.out.println(item.getName() +"		" + item.getPrice());
 			//update the subtotal
 			subtotal = subtotal + item.getPrice();
 		}
@@ -42,7 +36,6 @@ public class Bill {
 		System.out.println("HST: 	  " + taxes);
 		System.out.println("           __________");
 		System.out.println("TOTAL:    " + TOTAL);
-		
 	}
 	
 	/**
@@ -53,8 +46,7 @@ public class Bill {
 	 */
 	public double getUserPayment(Scanner scanner)
 	{
-		generateSubtotal();
-		double owing = subtotal;
+		double owing = TOTAL;
 		while (owing > 0)
 		{
 			System.out.println("You owe " + owing);
