@@ -23,12 +23,12 @@ public class Menu
 		}
 		
 		System.out.println("Enter a list of your choices separated by spaces");
-		System.out.println("Or x to exit");
+		System.out.println("Or 0 to exit");
 		System.out.print(" > ");
 		
 		String input = scanner.nextLine();
 		
-		if (input.equals("x"))
+		if (input.equals("0"))
 			return null;
 		
 		String[] selections = input.split(" ");
