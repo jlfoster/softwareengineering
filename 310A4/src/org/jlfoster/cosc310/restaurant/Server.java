@@ -1,4 +1,4 @@
-package org.jlfoster.cosc310.restaraunt;
+package org.jlfoster.cosc310.restaurant;
 import java.util.Random;
 
 public class Server {

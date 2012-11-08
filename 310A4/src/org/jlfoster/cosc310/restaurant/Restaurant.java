@@ -1,9 +1,9 @@
-package org.jlfoster.cosc310.restaraunt;
+package org.jlfoster.cosc310.restaurant;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Resturant {
+public class Restaurant {
 
 	/**
 	 * @param args
