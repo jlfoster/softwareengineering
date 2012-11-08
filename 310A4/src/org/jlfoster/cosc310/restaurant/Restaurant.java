@@ -6,16 +6,12 @@ import java.util.Scanner;
 public class Restaurant {
 
 	/**
+	 * COSC 310 Assignment 4
+	 * Question 4
+	 * Jodie Foster 64323082
+	 * Carson Myers 21651120
 	 * @param args
 	 */
-	/*
-	*COSC 310 Assignment 4
-	* Question 4
-	* Jodie Foster 64323082
-	* Carson Myers 21651120
-	*/
-	
-	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		
