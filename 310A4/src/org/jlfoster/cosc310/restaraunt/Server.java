@@ -18,7 +18,7 @@ public class Server {
 
 	public String getServer(){
 		int number = randomGenerator.nextInt(100);
-		return Server[number&2];
+		return Server[number % 2];
 	}
 
 }
