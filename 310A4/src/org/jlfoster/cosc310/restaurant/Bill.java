@@ -1,6 +1,8 @@
 package org.jlfoster.cosc310.restaurant;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Bill {
 	double subtotal = 0;
@@ -25,8 +27,29 @@ public class Bill {
 		System.out.println("Subtotal: " + subtotal);
 	}
 	
-	public void getUserPayment()
+	/**
+	 * Prompts the user for payment. If the bill is
+	 * overpaid, the amount it is overpaid by is 
+	 * returned as a tip.
+	 * @return
+	 */
+	public double getUserPayment(Scanner scanner)
 	{
-		System.out.println("Paid bill.");
+		double owing = subtotal;
+		while (owing > 0)
+		{
+			System.out.println("You owe " + owing);
+			System.out.print("Enter amount to pay: ");
+			try
+			{
+				owing -= scanner.nextDouble();
+			}
+			catch (InputMismatchException e)
+			{
+				System.out.println("Payment failed.");
+			}
+		}
+		
+		return -1 * owing;
 	}
 }

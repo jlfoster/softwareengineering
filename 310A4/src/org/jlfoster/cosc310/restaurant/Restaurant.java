@@ -28,7 +28,9 @@ public class Restaurant {
 			bill.printBill();
 		}
 		
-		bill.getUserPayment();
+		double tip = bill.getUserPayment(scanner);
+		
+		System.out.println("Tip: " + tip);
 	}
 
 }
