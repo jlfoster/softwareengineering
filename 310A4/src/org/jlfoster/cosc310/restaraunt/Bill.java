@@ -6,7 +6,7 @@ public class Bill {
 	double subtotal = 0;
 
 
-	public void setBill(ArrayList<MenuItem> AL){
+	public void getBill(ArrayList<MenuItem> AL){
 		//print out the titles
 		System.out.println("Menu Item				Price");
 		//for each item that they've selected
@@ -18,7 +18,5 @@ public class Bill {
 		}
 		//pring out the subtotal
 		System.out.println("Subtotal: " + subtotal);
-
-
 	}
 }
