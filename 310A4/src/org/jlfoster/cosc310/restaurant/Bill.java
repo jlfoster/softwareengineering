@@ -8,6 +8,7 @@ public class Bill {
 	double subtotal = 0;
 	double taxes = 0;
 	double TOTAL = 0;
+	private final double TAX_HST = 0.12;
 	ArrayList<MenuItem> choices;
 
 	public Bill(ArrayList<MenuItem> choices)
@@ -34,7 +35,7 @@ public class Bill {
 			subtotal = subtotal + item.getPrice();
 		}
 		//calculate the tax and total
-		taxes = subtotal*0.12;
+		taxes = subtotal * TAX_HST;
 		TOTAL = taxes + subtotal;
 		//prints out the subtotal, hst and then the total 
 		System.out.println("Subtotal: " + subtotal);
