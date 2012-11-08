@@ -1,6 +1,5 @@
 package org.jlfoster.cosc310.restaurant;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Restaurant {
