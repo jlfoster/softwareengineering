@@ -1,5 +1,6 @@
 package org.jlfoster.cosc310.restaurant;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Restaurant {
@@ -14,8 +15,23 @@ public class Restaurant {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		
-		Menu menu = new Menu(MenuItem.getItems());
-		Bill bill = new Bill(menu.getUserChoices(scanner));
+		while (mainLoop(scanner))
+			;
+		
+		scanner.close();
+	}
+	
+	private static boolean mainLoop(Scanner scanner)
+	{
+		Server server = Server.getRandomServer();
+		System.out.println("Your server is " + server.getName());
+		
+		Menu menu = new Menu(MenuItem.getItems());	
+		ArrayList<MenuItem> choices = menu.getUserChoices(scanner);
+		if (choices == null)
+			return false;
+		
+		Bill bill = new Bill(choices);
 		
 		System.out.print("View bill? (y/n): ");
 		if (scanner.nextLine().equals("y"))
@@ -24,8 +40,10 @@ public class Restaurant {
 		}
 		
 		double tip = bill.getUserPayment(scanner);
+		server.addTips(tip);
 		
-		System.out.println("Tip: " + tip);
+		System.out.println(server.getName() + "'s tips: " + server.getTips());
+		
+		return true;
 	}
-
 }
