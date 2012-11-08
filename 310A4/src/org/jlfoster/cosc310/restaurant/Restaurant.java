@@ -25,8 +25,10 @@ public class Restaurant {
 		System.out.print("View bill? (y/n): ");
 		if (scanner.nextLine().equals("y"))
 		{
-			
+			bill.printBill();
 		}
+		
+		bill.getUserPayment();
 	}
 
 }
