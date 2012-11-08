@@ -1,3 +1,5 @@
+import java.sql.Array;
+
 
 public class Resturant {
 
@@ -15,8 +17,10 @@ public class Resturant {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		
-		
+	// create servers
+		String[] Server = new String[2];
+		Server[0] = "Joseph";
+		Server[1] = "Brittany";
 		
 		
 		
