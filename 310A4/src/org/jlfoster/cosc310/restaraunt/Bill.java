@@ -4,13 +4,18 @@ import java.util.ArrayList;
 
 public class Bill {
 	double subtotal = 0;
+	ArrayList<MenuItem> choices;
 
+	public Bill(ArrayList<MenuItem> choices)
+	{
+		this.choices = choices;
+	}
 
-	public void getBill(ArrayList<MenuItem> AL){
+	public void printBill(){
 		//print out the titles
 		System.out.println("Menu Item				Price");
 		//for each item that they've selected
-		for(MenuItem item : AL){
+		for(MenuItem item : choices){
 			//print out the name and price
 			System.out.println(item.getName() +"		" + item.getPrice());
 			//update the subtotal
@@ -18,5 +23,10 @@ public class Bill {
 		}
 		//pring out the subtotal
 		System.out.println("Subtotal: " + subtotal);
+	}
+	
+	public void getUserPayment()
+	{
+		System.out.println("Paid bill.");
 	}
 }

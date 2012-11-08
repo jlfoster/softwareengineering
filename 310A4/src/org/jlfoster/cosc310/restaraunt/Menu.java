@@ -12,7 +12,7 @@ public class Menu
 		this.items = items;
 	}
 	
-	public ArrayList<MenuItem> getUserItems()
+	public ArrayList<MenuItem> getUserChoices(Scanner scanner)
 	{
 		for (int i = 1; i <= items.size(); i++)
 		{
@@ -25,9 +25,7 @@ public class Menu
 		System.out.println("Enter a list of your choices separated by spaces:");
 		System.out.print(" > ");
 		
-		Scanner kb = new Scanner(System.in);
-		String input = kb.nextLine();
-		kb.close();
+		String input = scanner.nextLine();
 		String[] selections = input.split(" ");
 		
 		ArrayList<MenuItem> menuChoices = new ArrayList<MenuItem>();

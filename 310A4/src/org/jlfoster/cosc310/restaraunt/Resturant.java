@@ -1,5 +1,8 @@
 package org.jlfoster.cosc310.restaraunt;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Resturant {
 
 	/**
@@ -14,15 +17,16 @@ public class Resturant {
 	
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Scanner scanner = new Scanner(System.in);
 		
+		Menu menu = new Menu(MenuItem.getItems());
+		Bill bill = new Bill(menu.getUserChoices(scanner));
 		
-		
-		
-		
-		
-		
+		System.out.print("View bill? (y/n): ");
+		if (scanner.nextLine().equals("y"))
+		{
+			
+		}
 	}
 
 }
