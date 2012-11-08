@@ -1,24 +1,46 @@
 package org.jlfoster.cosc310.restaurant;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Server {
 
-	Random randomGenerator = new Random();
-	private	String[] Server = new String[2];
-
-	public void setServer(){
-		Server[0] = "Joseph";
-		Server[1] = "Brittany";
+	private static Random randomGenerator = new Random();
+	private static String[] serverNames = new String[] { "Joseph", "Brittany" };
+	private static ArrayList<Server> servers;
+	private String name;
+	private double tips;
+	
+	static
+	{
+		servers = new ArrayList<Server>();
+		for (int i = 0; i < serverNames.length; i++)
+			servers.add(new Server(serverNames[i]));
+	}
+	
+	public Server(String name)
+	{
+		this.name = name;
+		tips = 0;
+	}
+	
+	public String getName()
+	{
+		return name;
+	}
+	
+	public double getTips()
+	{
+		return tips;
+	}
+	
+	public void addTips(double amount)
+	{
+		tips += amount;
 	}
 
-	public void setServer(String str1, String str2){
-		Server[0] = str1;
-		Server[1] = str2;
-	}
-
-	public String getServer(){
-		int number = randomGenerator.nextInt(100);
-		return Server[number % 2];
+	public static Server getRandomServer(){
+		int number = randomGenerator.nextInt(servers.size());
+		return servers.get(number);
 	}
 
 }

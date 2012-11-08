@@ -13,6 +13,14 @@ public class Bill {
 		this.choices = choices;
 	}
 
+	private void generateSubtotal()
+	{
+		subtotal = 0;
+		
+		for (MenuItem item : choices)
+			subtotal += item.getPrice();
+	}
+	
 	public void printBill(){
 		//print out the titles
 		System.out.println("Menu Item				Price");
@@ -35,6 +43,7 @@ public class Bill {
 	 */
 	public double getUserPayment(Scanner scanner)
 	{
+		generateSubtotal();
 		double owing = subtotal;
 		while (owing > 0)
 		{
@@ -43,6 +52,7 @@ public class Bill {
 			try
 			{
 				owing -= scanner.nextDouble();
+				scanner.nextLine();
 			}
 			catch (InputMismatchException e)
 			{
