@@ -27,6 +27,7 @@ public class Menu
 		
 		Scanner kb = new Scanner(System.in);
 		String input = kb.nextLine();
+		kb.close();
 		String[] selections = input.split(" ");
 		
 		ArrayList<MenuItem> menuChoices = new ArrayList<MenuItem>();
